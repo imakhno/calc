@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/null.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/spollers.css">
+
+    <title>Меню</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="_container">
+                <div class="header__wrapper">
+                    <a href="/" class="header__logo"><img src="" alt=""></a>
+                    <div class="header__menu menu">
+                        <div class="menu__icon icon-menu"><span></span></div>
+                        <nav class="menu__body">
+                            <ul class="menu__list">
+                                <li class="menu__item"><a data-goto=".page__section-1" href="/"
+                                        class="menu__link">Калькулятор КБЖУ</a></li>
+                                <!-- <li class="menu__item"><a data-goto=".page__section-2" href="#"
+                                        class="menu__link">Раздел
+                                        №2</a></li>
+                                <li class="menu__item"><a data-goto=".page__section-3" href="#"
+                                        class="menu__link">Раздел
+                                        №3</a></li>
+                                <li class="menu__item">
+                                    <a href="" class="menu__link">Страница №1</a>
+                                    <span class="menu__arrow"></span>
+                                    <ul class="menu__sub-list">
+                                        <li>
+                                            <a href="" class="menu__sub-link">Раздел страницы №1</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="menu__sub-link">Раздел страницы №2</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="menu__sub-link">Раздел страницы №3</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="" class="menu__link">Страница №2</a>
+                                </li> -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+
+            <form id="calcForm" class="calculator__form">
+
+                <fieldset>
+                    <legend>Пол</legend>
+
+                    <label>
+                        <input type="radio" name="gender" value="male">
+                        Мужской
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="female">
+                        Женский
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Возраст</legend>
+                    <input type="number" id="age" name="age" required min="10" max="99" placeholder="Например: 25">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Вес (кг)</legend>
+                    <input type="number" id="weight" name="weight" required min="30" max="300"
+                        placeholder="Например: 72">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Рост (см)</legend>
+                    <input type="number" id="height" name="height" required min="120" max="230"
+                        placeholder="Например: 175">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Уровень активности</legend>
+
+                    <label>
+                        <input type="radio" name="activity" value="1.2" required>
+                        Минимальная — сидячая работа
+                    </label>
+
+                    <label>
+                        <input type="radio" name="activity" value="1.375" required>
+                        Лёгкая — 1–3 тренировки в неделю
+                    </label>
+
+                    <label>
+                        <input type="radio" name="activity" value="1.55" required>
+                        Средняя — 3–5 тренировок
+                    </label>
+
+                    <label>
+                        <input type="radio" name="activity" value="1.725" required>
+                        Высокая — 6–7 тренировок
+                    </label>
+
+                    <label>
+                        <input type="radio" name="activity" value="1.9" required>
+                        Очень высокая — 2 тренировки в день
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Цель</legend>
+
+                    <label>
+                        <input type="radio" name="goal" value="maintain" required>
+                        Поддержание веса
+                    </label>
+
+                    <label>
+                        <input type="radio" name="goal" value="loss" required>
+                        Снижение веса
+                    </label>
+
+                    <label>
+                        <input type="radio" name="goal" value="gain" required>
+                        Набор массы
+                    </label>
+                </fieldset>
+
+                <button type="submit" class="button calculate-btn">Рассчитать</button>
+
+            </form>
+
+            <div class="result-block">
+                <div class="result" id="result">
+                    <h2>Результат</h2>
+                    <!-- Сюда JS вставит результат -->
+                </div>
+            </div>
+
+
+
+
+
+        </main>
+        <!-- <footer class=" footer">подвал</footer> -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/dynamicAdapt.js"></script>
+    <script src="scripts/spollers.js"></script>
+</body>
+
+</html>

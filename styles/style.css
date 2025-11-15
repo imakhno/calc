@@ -1,0 +1,659 @@
+.wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.header {
+    background: #E5E5E5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: #912105;
+}
+
+.main {
+    flex: 1 1 auto;
+    padding-top: 70px;
+}
+
+.footer {
+    background: #77608d;
+}
+
+body._lock {
+    overflow: hidden;
+}
+
+._container {
+    max-width: var(--width-container);
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+h2 {
+    font-size: var(--title-font-size);
+    margin: 0 0 20px 0;
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70px;
+}
+
+.header__logo {
+    border-radius: 50%;
+    background: white;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 5;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.header__menu {}
+
+.menu__icon {
+    display: none;
+}
+
+.menu__body {}
+
+.menu__list {}
+
+.menu__list>li {
+    position: relative;
+    margin: 0 0 0 20px;
+}
+
+.menu__item {}
+
+.menu__link {
+    color: #fff;
+    font-size: 18px;
+}
+
+.menu__link:hover {
+    text-decoration: underline;
+}
+
+.menu__sub-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    min-width: 200px;
+    right: 0;
+    background: #000;
+    padding: 15px;
+}
+
+.menu__sub-list li {
+    margin: 0 0 10px 0;
+}
+
+.menu__sub-link {
+    color: #fff;
+}
+
+.menu__sub-link li:last-child {
+    margin: 0;
+}
+
+/********************************/
+
+body._pc .menu__list>li:hover .menu__sub-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    pointer-events: all;
+}
+
+body._touch .menu__list>li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body._touch .menu__arrow {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #fff;
+    transition: transform 0.3s ease 0s;
+    -webkit-transition: transform 0.3s ease 0s;
+    -moz-transition: transform 0.3s ease 0s;
+    -ms-transition: transform 0.3s ease 0s;
+    -o-transition: transform 0.3s ease 0s;
+    margin-left: 5px;
+}
+
+body._touch .menu__link {
+    flex: 1 1 auto;
+}
+
+body._touch .menu__list>li._active .menu__sub-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    pointer-events: all;
+}
+
+body._touch .menu__list>li._active .menu__arrow {
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+}
+
+/********************************/
+/* Для экранов шириной от 768px */
+@media (min-width: 48em) {
+    .menu__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu__list>li {
+        padding: 10px 0;
+    }
+
+    .menu__sub-list {
+        transform: translate(0px, 10%);
+        -webkit-transform: translate(0px, 10%);
+        -moz-transform: translate(0px, 10%);
+        -ms-transform: translate(0px, 10%);
+        -o-transform: translate(0px, 10%);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.3s ease 0s;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -ms-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+    }
+}
+
+/* Для экранов шириной до 768px */
+@media (max-width: 48em) {
+    .menu__icon {
+        z-index: 5;
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    .menu__icon span,
+    .menu__icon::before,
+    .menu__icon::after {
+        left: 0;
+        position: absolute;
+        height: 10%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -ms-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        background-color: #fff;
+    }
+
+    .menu__icon::before,
+    .menu__icon::after {
+        content: "";
+    }
+
+    .menu__icon::before {
+        top: 0;
+    }
+
+    .menu__icon::after {
+        bottom: 0;
+    }
+
+    .menu__icon span {
+        top: 48%;
+        transform: scale(1) translate(0, -50%);
+        -webkit-transform: scale(1) translate(0, -50%);
+        -moz-transform: scale(1) translate(0, -50%);
+        -ms-transform: scale(1) translate(0, -50%);
+        -o-transform: scale(1) translate(0, -50%);
+    }
+
+    .menu__icon._active span {
+        transform: scale(0) translate(0, -50%);
+        -webkit-transform: scale(0) translate(0, -50%);
+        -moz-transform: scale(0) translate(0, -50%);
+        -ms-transform: scale(0) translate(0, -50%);
+        -o-transform: scale(0) translate(0, -50%);
+    }
+
+    .menu__icon._active::before {
+        top: 48%;
+        transform: rotate(-45deg) translate(0, -50%);
+        -webkit-transform: rotate(-45deg) translate(0, -50%);
+        -moz-transform: rotate(-45deg) translate(0, -50%);
+        -ms-transform: rotate(-45deg) translate(0, -50%);
+        -o-transform: rotate(-45deg) translate(0, -50%);
+    }
+
+    .menu__icon._active::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0, -50%);
+        -webkit-transform: rotate(45deg) translate(0, -50%);
+        -moz-transform: rotate(45deg) translate(0, -50%);
+        -ms-transform: rotate(45deg) translate(0, -50%);
+        -o-transform: rotate(45deg) translate(0, -50%);
+    }
+
+    .menu__body {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        padding: 100px 30px 30px 30px;
+        transition: left 0.3s ease 0s;
+        -webkit-transition: left 0.3s ease 0s;
+        -moz-transition: left 0.3s ease 0s;
+        -ms-transition: left 0.3s ease 0s;
+        -o-transition: left 0.3s ease 0s;
+        overflow: auto;
+    }
+
+    .menu__body._active {
+        left: 0;
+    }
+
+    .menu__body::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 70px;
+        background: #912105;
+        z-index: 5;
+    }
+
+    .menu__list>li {
+        flex-wrap: wrap;
+        margin: 0 0 30px 0;
+    }
+
+    .menu__list>li:last-child {
+        margin-bottom: 0;
+    }
+
+    .menu__link {
+        font-size: 24px;
+    }
+
+    .menu__list>li._active .menu__sub-list {
+        display: block;
+    }
+
+    .menu__sub-list {
+        position: relative;
+        background: #fff;
+        flex: 1 1 100%;
+        margin: 20px 0 0 0;
+        display: none;
+        transition: all 0.3s ease 0s;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -ms-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+    }
+
+    .menu__sub-link {
+        color: #000;
+    }
+}
+
+
+.section__page {
+    padding: 90px 30px 30px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page__section-1 {
+    background: #794f45;
+}
+
+.page__section-2 {
+    background: #77608d;
+}
+
+.page__section-3 {
+    background: #7a956b;
+}
+
+
+/* .calculator__form,
+.calculator__result {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+}
+
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+}
+
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+fieldset:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+
+
+input[type="radio"] {
+    margin: 0 10px 5px 0; 
+    vertical-align: middle; 
+}
+
+.button {
+    margin: 20px 0;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #4CAF50, #45A049);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+}
+
+
+.result {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 12px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+    font-weight: 500;
+}
+
+.food-guide {
+    margin-top: 50px;
+    padding: 48px;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.06);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+    line-height: 1.65;
+    color: #1c1c1e;
+}
+
+.food-guide h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #000000;
+    letter-spacing: -0.5px;
+}
+
+.food-guide h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    color: #1d1d1f;
+}
+
+.food-guide p {
+    font-size: 17px;
+    color: #3a3a3c;
+    margin-bottom: 20px;
+}
+
+.food-guide strong {
+    color: #111111;
+    font-weight: 600;
+}
+
+.food-guide .highlight-box {
+    background: #f5f5f7;
+    border-radius: 20px;
+    padding: 20px 24px;
+    margin: 32px 0;
+    font-size: 17px;
+    color: #1c1c1e;
+}
+
+.food-guide .example-block {
+    background: #fafafa;
+    padding: 28px;
+    border-radius: 24px;
+    border: 1px solid #ececec;
+    margin-top: 12px;
+}
+
+.food-guide ol,
+.food-guide ul {
+    margin: 20px 0 20px 24px;
+}
+
+.food-guide li {
+    font-size: 17px;
+    margin-bottom: 14px;
+}
+
+.food-guide ol li::marker {
+    font-weight: 600;
+    color: #1c1c1e;
+}
+
+.food-guide ul li::marker {
+    color: #0071e3; 
+}
+
+.food-guide .example-block p {
+    margin-bottom: 14px;
+}
+
+.food-guide .example-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #1d1d1f;
+} */
+
+/* ==== Общий стиль ==== */
+.calculator__form {
+    background: #fff;
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    margin: 40px auto;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.calculator__form fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.calculator__form legend {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #111;
+}
+
+/* ==== Инпуты ==== */
+.calculator__form input[type="number"] {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    border: 1px solid #d0d0d0;
+    border-radius: 12px;
+    background: #fafafa;
+    transition: 0.2s;
+}
+
+.calculator__form input[type="number"]:focus {
+    outline: none;
+    border-color: #007aff;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
+    background: #fff;
+}
+
+/* ==== Радиокнопки ==== */
+.calculator__form label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.calculator__form input[type="radio"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Ховер по Label */
+.calculator__form label:hover {
+    background: #f2f2f2;
+}
+
+/* ==== Кнопка ==== */
+.button.calculate-btn {
+    width: 100%;
+    padding: 16px;
+    background: #007aff;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.button.calculate-btn:hover {
+    background: #006ae6;
+}
+
+.button.calculate-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==== Результатный блок ==== */
+.result-block {
+    background: #fff;
+    padding: 28px;
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+    margin: 30px auto;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.result h2 {
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid #eee;
+}
+
+.result-row:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+fieldset legend {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #555;
+    text-transform: uppercase;
+    /* заглавные буквы */
+    letter-spacing: 0.05em;
+    /* межбуквенный интервал */
+    margin-bottom: 12px;
+}

@@ -1,0 +1,9 @@
+:root {
+    --width-container: 1170px;
+    --text-on-page: clamp(14px, 2vw + 1rem, 16px);
+    --h1-font-size: clamp(32px, 2vw + 1rem, 40px);
+    --h2-font-size: clamp(24px, 2vw + 1rem, 32px);
+    --h3-font-size: clamp(20px, 2vw + 1rem, 24px);
+    --h4-font-size: clamp(20px, 2vw + 1rem, 24px);
+    --h5-font-size: clamp(16px, 2vw + 1rem, 18px);
+}
