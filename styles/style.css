@@ -656,4 +656,10 @@ fieldset legend {
     letter-spacing: 0.05em;
     /* межбуквенный интервал */
     margin-bottom: 12px;
+
+}
+
+.result-block {
+    width: 90%;
+    margin: 0 auto;
 }
