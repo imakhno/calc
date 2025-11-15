@@ -37,7 +37,7 @@ body {
 	width: 100%;
 	font-size: 100%;
 	line-height: 1;
-	font-size: 14px;
+	font-size: 17px;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -89,4 +89,5 @@ h5,
 h6 {
 	font-size: inherit;
 	font-weight: 400;
+
 }
